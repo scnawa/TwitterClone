@@ -24,7 +24,7 @@
           <SidebarOption Icon={PermIdentityIcon} text="Profile" />
           <SidebarOption Icon={MoreHorizIcon} text="More" />
 
-          <Button variant="outlined" className="sidebaTweet" fullWidth>
+          <Button variant="outlined" className="sidebarTweet" fullWidth>
             Tweet
           </Button>
       </div>
