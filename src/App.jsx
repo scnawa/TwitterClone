@@ -10,9 +10,7 @@ function App() {
   return (
     <div className="App">
       <Sidebar/>
-      {/** Feed */}
       <Feed/>
-      {/** Ads */}
       <Widgets/>
     </div>
   );
