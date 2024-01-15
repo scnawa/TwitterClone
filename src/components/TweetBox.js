@@ -1,27 +1,30 @@
 import React, {useState} from 'react'
 import { Button } from '@mui/material';
-import db from "./firebase";
+import { db } from "./firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 function TweetBox() {
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
-
-  const sendTweet = (e) => {
-    e.preventDefault();
-
-    db.collection("posts").add({
-      displayName: "Rafeh Qazi",
-      username: "cleverqazi",
-      verified: true,
-      text: tweetMessage,
-      image: tweetImage,
-      avatar:
-        "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
-    });
-
-    setTweetMessage("");
-    setTweetImage("");
-  };
+  
+  const sendTweet = async (e) => {
+    e.preventDefault();  
+   
+    try {
+        const docRef = await addDoc(collection(db, "post"), {
+          displayName: "Sinha Nawa",
+          username: "scnawa",
+          verified: true,
+          text: tweetMessage,
+          image: tweetImage,    
+        });
+        console.log("Post written with id: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding post: ", e);
+      }
+      setTweetMessage("");
+      setTweetImage("");
+  }
   return (
     <div className="tweetBox">
     <form>

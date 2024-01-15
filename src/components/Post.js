@@ -21,7 +21,7 @@ const Post = forwardRef(
                 {displayName}{" "}
                 <span className="postHeaderSpecial">
                   {verified && <VerifiedUserIcon className="postBadge" />} @
-                  {username}
+                  {username}  
                 </span>
               </h3>
             </div>
