@@ -1,11 +1,11 @@
 import React, { forwardRef } from "react";
 import "./Post.css";
-import { Avatar } from "@material-ui/core";
-import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
-import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
-import RepeatIcon from "@material-ui/icons/Repeat";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import PublishIcon from "@material-ui/icons/Publish";
+import Avatar from './Avatar';
+import VerifiedIcon from '@mui/icons-material/Verified';
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import RepeatIcon from '@mui/icons-material/Repeat';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import PublishIcon from '@mui/icons-material/Publish';
 
 const Post = forwardRef(
   ({ displayName, username, verified, text, image, avatar }, ref) => {
@@ -20,7 +20,7 @@ const Post = forwardRef(
               <h3>
                 {displayName}{" "}
                 <span className="postHeaderSpecial">
-                  {verified && <VerifiedUserIcon className="postBadge" />} @
+                  {verified && <VerifiedIcon className="postBadge" />} @
                   {username}  
                 </span>
               </h3>
