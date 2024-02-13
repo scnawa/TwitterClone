@@ -11,10 +11,10 @@ function Feed() {
 
   const getPosts = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'posts'));
+      const querySnapshot = await getDocs(collection(db, 'post'));
       const postsArray = [];
       querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
+        console.log(doc.data());
         postsArray.push({ id: doc.id, data: doc.data() });
       });
       setPosts(postsArray);
@@ -37,13 +37,13 @@ function Feed() {
       <FlipMove>
         {posts.map((post) => (
           <Post
-            key={post.text}
-            displayName={post.displayName}
-            username={post.username}
-            verified={post.verified}
-            text={post.text}
-            avatar={post.avatar}
-            image={post.image}
+            key={post.data.id}
+            displayName={post.data.displayName}
+            username={post.data.username}
+            verified={post.data.verified}
+            text={post.data.text}
+            avatar={post.data.avatar}
+            image={post.data.image}
           />
         ))}
       </FlipMove>

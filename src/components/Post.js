@@ -25,9 +25,9 @@ const Post = forwardRef(
                 </span>
               </h3>
             </div>
-            <div className="postHeaderDescription">
+          </div>
+          <div className="postHeaderDescription">
               <p>{text}</p>
-            </div>
           </div>
           <img src={image} alt="" />
           <div className="postFooter">
